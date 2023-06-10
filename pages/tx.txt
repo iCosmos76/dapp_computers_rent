@@ -1,0 +1,9 @@
+const contractInstance = await ComputersRent.deployed();
+const result = await contractInstance.mint("0xBe9C05C3Cd1aaf66c03Ba816a9c728c4433D6AC2","Computer_1","1000000000000000000","AMD","16","Nvidia","1000")
+const result_1 = await contractInstance.mint("0xBe9C05C3Cd1aaf66c03Ba816a9c728c4433D6AC2","Computer_2","1000000000000000000","Intel","32","Nvidia","1000")
+
+let r_1 = await contractInstance.getComputerCount();
+let vl_1 = await r_1;
+let bgr_1 = web3.utils.toBN(vl_1);
+let str_1 = bgr_1.toString();
+str_1
