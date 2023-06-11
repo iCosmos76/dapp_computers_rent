@@ -49,55 +49,6 @@ function Landlord() {
     }
   }, [rentComputerTokenId, rentAmount]);
 
-//   const changeWalletAddress = async (newAddress) => {
-//     try {
-//       // Проверяем, доступен ли MetaMask
-//       if (window.ethereum) {
-//         await window.ethereum.enable();
-//         const web3 = new Web3(window.ethereum);
-//         const accounts = await web3.eth.getAccounts();
-//         const currentAddress = accounts[0];
-//         if (currentAddress.toLowerCase() !== newAddress.toLowerCase()) {
-//           // Изменяем кошелек
-//           await window.ethereum.request({
-//             method: 'wallet_switchEthereumChain',
-//             params: [{ chainId: '0x539' }], // Идентификатор сети Ganache
-//           });
-
-//           await window.ethereum.request({
-//             method: 'wallet_addEthereumChain',
-//             params: [
-//               {
-//                 chainId: '0x539', // Идентификатор сети Ganache
-//                 chainName: 'Localhost', // Название сети
-//                 nativeCurrency: {
-//                   name: 'Ether',
-//                   symbol: 'ETH',
-//                   decimals: 18,
-//                 },
-//                 rpcUrls: ['http://localhost:7545'], // URL-адрес RPC-сервера Ganache
-//                 blockExplorerUrls: [],
-//                 iconUrls: [],
-//               },
-//             ],
-//           });
-
-//           await window.ethereum.request({
-//             method: 'wallet_switchEthereumChain',
-//             params: [{ chainId: '0x539' }], // Идентификатор сети Ganache
-//           });
-
-//           // Обновляем состояние кошелька
-//           setWalletAddress(newAddress);
-//         }
-//       } else {
-//         console.error('MetaMask is not installed');
-//       }
-//     } catch (error) {
-//       console.error(error);
-//     }
-//   };
-
   const loadWeb3Data = async () => {
     const storedAddress = localStorage.getItem('currentAddress');
     if (window.ethereum) {
